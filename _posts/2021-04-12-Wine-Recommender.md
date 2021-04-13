@@ -8,4 +8,6 @@ excerpt: "Creating wine recommendations from wine reviews"
 mathjax: "true"
 ---
 
-Place holder for this project
+Use this as a placeholder for now. Do an actual project summary rather than just post a link.
+
+The repo for this post can be found [here](https://github.com/calebcorpuz1/Wine-Recommendation-Engine).
