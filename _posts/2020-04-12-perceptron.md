@@ -1,6 +1,6 @@
 ---
 title: "Caleb's First Post"
-date: 2018-01-28
+date: 2020-04-12
 tags: [data wrangling, data science, messy data]
 header:
   image: "/images/perceptron/percept.jpg"
