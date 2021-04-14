@@ -1,5 +1,5 @@
 ---
-title: "Wine Recommendation"
+title: "Wine Recommendation Engine"
 date: 2020-04-12
 tags: [data science, recommendation engine]
 header:
