@@ -9,5 +9,5 @@ mathjax: "true"
 ---
 Use this as a placeholder for now. Do an actual project summary rather than just post a link.
 
-Repo for this project can be found [here](https://github.com/calebcorpuz1/Wallstreetbets-Analysis)
+Repo for this project can be found [here](https://github.com/calebcorpuz1/Bank-Peer-Group-Clustering)
 
