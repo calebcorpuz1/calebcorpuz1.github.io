@@ -1,5 +1,5 @@
 ---
-title: "Wallstreetbets Subreddit Analysis"
+title: "Bank Peer Group"
 date: 2020-05-20
 tags: [data science, clustering]
 header:
