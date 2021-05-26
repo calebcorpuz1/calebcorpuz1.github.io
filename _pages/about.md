@@ -16,4 +16,5 @@ University of Hawaii with a Bachelors degree in Economics and I am currently att
 
 ## Interests
 - Text Analytics 
+- Sports Analytics
 - Machine Learning
