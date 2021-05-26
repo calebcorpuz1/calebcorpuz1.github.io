@@ -2,10 +2,10 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/images/oahu4.jpeg"
+  image: "/images/oahu4.jpg"
 ---
 
-I currently work as a data analyst at a bank working with the retail and commercial credit policy teams. I graduated from the 
+I am currently employed as a data analyst at a bank working with the retail and commercial credit policy teams. I graduated from the 
 University of Hawaii with a Bachelors degree in Economics and I am currently attend Bellevue University for a M.S. in Data Science. 
 
 ## Skills
