@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/images/mountains.jpeg"
+  image: "/images/oahu4.jpeg"
 ---
 
 I currently work as a data analyst at a bank working with the retail and commercial credit policy teams. I graduated from the 
