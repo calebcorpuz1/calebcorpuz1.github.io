@@ -1,7 +1,7 @@
 ---
 title: "Wallstreetbets Subreddit Analysis"
 date: 2020-04-12
-tags: [data science, recommendation engine, text analysis, sentiment analysis]
+tags: [data science, text analysis, sentiment analysis]
 header:
   image: 
 excerpt: "Analyzing the relationship between wallstreetbets and historical stock data."
