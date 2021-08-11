@@ -22,6 +22,11 @@ There is no question as to what caused the change in GameStop’s stock price, b
 
 For the reddit posts, I downloaded a dataset from kaggle that scraped all of the posts from wallstreetbets starting from the end of January 2021. I then filtered the posts to only include posts that contain some form of the word GameStop or the stock symbol GME. To retrieve the historical stock data, I used the module yfinance in Python, which can be used to download historical market data from Yahoo! Finance. 
 
+'''
+print("hello world")
+'''
+
+
 ## Methods
 
 The first thing I wanted to look at is the relationship between the posts and gamestop stock. To look at this relationship I decided to perform a sentiment analysis on the posts and compare this to the stock price. Sentiment analysis is a text classification process that is used to understand the underlying sentiment or emotion of a given text. 
