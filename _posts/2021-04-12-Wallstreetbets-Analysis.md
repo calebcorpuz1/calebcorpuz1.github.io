@@ -24,73 +24,76 @@ For the reddit posts, I downloaded a dataset from kaggle that scraped all of the
 
 ### Data Prep
 
-	import re
-	import string
-	import numpy as np
-	import pandas as pd
-	import matplotlib.pyplot as plt
-	from re import search
-	from datetime import datetime
-	from nltk.corpus import stopwords
-	from nltk.tokenize import word_tokenize
-	from nltk.sentiment import SentimentIntensityAnalyzer 
-	from sklearn.model_selection import train_test_split
-	
-	df = pd.read_csv('/Users/ccorpuz/Desktop/DSC 680/Data/reddit_wsb.csv')
+'''python
 
-	def search_GME(data):		# Creates and indicator if some form of gamestop is present
-	    if search("gme", data):
-		x = 1
-	    elif search("gamestop", data):
-		x = 1
-	    elif search("game stop", data):
-		x = 1
-	    else:
-		x = 0
-	    return x
+import re
+import string
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from re import search
+from datetime import datetime
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.sentiment import SentimentIntensityAnalyzer 
+from sklearn.model_selection import train_test_split
 
-	df['title'] = df['title'].astype(str) 
-	df['title'] = df['title'].apply(lambda x: x.lower())
+df = pd.read_csv('/Users/ccorpuz/Desktop/DSC 680/Data/reddit_wsb.csv')
 
-	df['title_gme_ind'] = df['title'].apply(lambda x: search_GME(x)) # search the title for a form of GME
+def search_GME(data):		# Creates and indicator if some form of gamestop is present
+    if search("gme", data):
+	x = 1
+    elif search("gamestop", data):
+	x = 1
+    elif search("game stop", data):
+	x = 1
+    else:
+	x = 0
+    return x
 
-	df['body'] = df['body'].astype(str)
-	df['body'] = df['body'].apply(lambda x: x.lower())
+df['title'] = df['title'].astype(str) 
+df['title'] = df['title'].apply(lambda x: x.lower())
 
-	df['body_gme_ind'] = df['body'].apply(lambda x: search_GME(x)) # search the body for a form of GME
+df['title_gme_ind'] = df['title'].apply(lambda x: search_GME(x)) # search the title for a form of GME
 
-	df['all_gme_ind'] = df['title_gme_ind'] + df['body_gme_ind'] # total the indicator columns 
+df['body'] = df['body'].astype(str)
+df['body'] = df['body'].apply(lambda x: x.lower())
 
-	# create a dataframe that has all the posts containing some form of gamestop in either the title or body
-	df_gme = df[df['all_gme_ind'] > 0]
-	
-	# functions to clean text
-	stop_words = set(stopwords.words('english')) 
+df['body_gme_ind'] = df['body'].apply(lambda x: search_GME(x)) # search the body for a form of GME
 
-	def remove_emoji(string):
-	    emoji_pattern = re.compile("["
-				   u"\U0001F600-\U0001F64F"  # emoticons
-				   u"\U0001F300-\U0001F5FF"  # symbols & pictographs
-				   u"\U0001F680-\U0001F6FF"  # transport & map symbols
-				   u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
-				   u"\U00002702-\U000027B0"
-				   u"\U000024C2-\U0001F251"
-				   "]+", flags=re.UNICODE)
-	    return emoji_pattern.sub(r'', string)
+df['all_gme_ind'] = df['title_gme_ind'] + df['body_gme_ind'] # total the indicator columns 
 
-	def remove_stopword(data):
-	    new_data = []
-	    for word in data:
-		if word not in stop_words:
-		    new_data.append(word)
-		else:
-		    continue
-	    return new_data
+# create a dataframe that has all the posts containing some form of gamestop in either the title or body
+df_gme = df[df['all_gme_ind'] > 0]
 
-	def retrieve_date(data): # pulls only the year, month, and day from the timestamp
-	    x = data[0:10]
-	    return x
+# functions to clean text
+stop_words = set(stopwords.words('english')) 
 
+def remove_emoji(string):
+    emoji_pattern = re.compile("["
+			   u"\U0001F600-\U0001F64F"  # emoticons
+			   u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+			   u"\U0001F680-\U0001F6FF"  # transport & map symbols
+			   u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+			   u"\U00002702-\U000027B0"
+			   u"\U000024C2-\U0001F251"
+			   "]+", flags=re.UNICODE)
+    return emoji_pattern.sub(r'', string)
+
+def remove_stopword(data):
+    new_data = []
+    for word in data:
+	if word not in stop_words:
+	    new_data.append(word)
+	else:
+	    continue
+    return new_data
+
+def retrieve_date(data): # pulls only the year, month, and day from the timestamp
+    x = data[0:10]
+    return x
+
+'''
 
 ## Methods
 
