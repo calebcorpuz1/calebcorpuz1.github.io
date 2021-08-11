@@ -22,9 +22,13 @@ There is no question as to what caused the change in GameStop’s stock price, b
 
 For the reddit posts, I downloaded a dataset from kaggle that scraped all of the posts from wallstreetbets starting from the end of January 2021. I then filtered the posts to only include posts that contain some form of the word GameStop or the stock symbol GME. To retrieve the historical stock data, I used the module yfinance in Python, which can be used to download historical market data from Yahoo! Finance. 
 
-'''
-print("hello world")
-'''
+	print("hello world")
+	
+	def my_func():
+		print("this is my function")
+	
+	my_func()
+
 
 
 ## Methods
